@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "precommit": "npm run eslint && lint-staged",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}'",
+    "format": "eslint --fix 'src/**/*.{js,ts,tsx}'",
     "eslint": "eslint --ext .tsx,.ts --fix ./src",
     "start": "./node_modules/.bin/webpack-dev-server --hot --open --config webpack.dev.config.js",
     "dll": "./node_modules/.bin/cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack.dll.config.js",
@@ -12,10 +13,10 @@
   },
   "husky": {
     "hooks": {
-       "pre-commit": "npm run precommit"
-     }
- },
-   "lint-staged": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "lint-staged": {
     "*.{.ts,.tsx}": [
       "eslint",
       "git add"
