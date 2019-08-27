@@ -15,8 +15,11 @@
        "pre-commit": "npm run precommit"
      }
  },
-  "lint-staged": {
-    "src/**/*.js": "eslint"
+   "lint-staged": {
+    "*.{.ts,.tsx}": [
+      "eslint",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
