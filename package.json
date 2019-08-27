@@ -10,6 +10,11 @@
     "dll": "./node_modules/.bin/cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack.dll.config.js",
     "build": "./node_modules/.bin/cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack.dev.config.js"
   },
+  "husky": {
+    "hooks": {
+       "pre-commit": "npm run precommit"
+     }
+ },
   "lint-staged": {
     "src/**/*.js": "eslint"
   },

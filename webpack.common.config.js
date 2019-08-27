@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TsconfigPathsPlugin=require('tsconfig-paths-webpack-plugin')
+
 const miniCssExtractPlugin=require('mini-css-extract-plugin')
 
 const WORKSPACE = path.resolve(__dirname);
@@ -43,7 +44,7 @@ const commonConfig = {
                 test: /\.s[ac]ss$/,
                 include: path.join(WORKSPACE, 'src'),
                 use: [
-                    miniCssExtractPlugin.loader, 
+                    miniCssExtractPlugin.loader,
                     {
                         loader:'typings-for-css-modules-loader',
                         options:{
